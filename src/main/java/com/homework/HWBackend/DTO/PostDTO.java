@@ -3,8 +3,8 @@ package com.homework.HWBackend.DTO;
 public class PostDTO {
     private String title;
     private String main;
-    private int board_id;
-    private int user_id;
+    private int boardid;
+    private int userid;
 
     //g s
 
@@ -24,19 +24,19 @@ public class PostDTO {
         this.main = main;
     }
 
-    public int getBoard_id() {
-        return board_id;
+    public int getBoardid() {
+        return boardid;
     }
 
-    public void setBoard_id(int board_id) {
-        this.board_id = board_id;
+    public void setBoardid(int boardid) {
+        this.boardid = boardid;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 }

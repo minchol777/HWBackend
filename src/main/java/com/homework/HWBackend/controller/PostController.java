@@ -51,10 +51,10 @@ public class PostController {
         post.setMain(postDTO.getMain());
 
         // new 안쓰고 리피지토리 인터페이스로 만드는 이유는 그래야 DB랑 연결성을 spring이 잡아주기 때문이다.
-        Boards board =  boardsRepository.findById(postDTO.getBoard_id()).orElseThrow(()->
+        Boards board =  boardsRepository.findById(postDTO.getBoardid()).orElseThrow(()->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 boards id"));
         post.setBoard(board);
-        Users user = usersRepository.findById(postDTO.getUser_id()).orElseThrow(()->
+        Users user = usersRepository.findById(postDTO.getUserid()).orElseThrow(()->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 users id"));
         post.setUser(user);
         // 이렇게 하면 포링키라 usersRepository를 통해서 스프링이 db의 알맞는 유저를 들고온다.

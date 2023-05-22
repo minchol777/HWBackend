@@ -16,11 +16,11 @@ public class Comments {
 
     @ManyToOne
     @JoinColumn(name = "post_id")
-    private Post post_id;
+    private Post postid;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users user_id;
+    private Users userid;
 
 
     //g s tter
@@ -43,18 +43,18 @@ public class Comments {
     }
 
     public Post getPost_id() {
-        return post_id;
+        return postid;
     }
 
     public void setPost_id(Post post_id) {
-        this.post_id = post_id;
+        this.postid = post_id;
     }
 
     public Users getUser_id() {
-        return user_id;
+        return userid;
     }
 
     public void setUser_id(Users user_id) {
-        this.user_id = user_id;
+        this.userid = user_id;
     }
 }
