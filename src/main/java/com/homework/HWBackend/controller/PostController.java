@@ -37,7 +37,7 @@ public class PostController {
 
 
 
-    @GetMapping
+    @GetMapping //게시판 목록 불러올때 사용 음 아마 타이틀만/id만  가지고 오게 하면 될 꺼 같은대..
     public List<Post> getAllPosts() {
         return postRepository.findAll();
     }
@@ -57,6 +57,7 @@ public class PostController {
         Users user = usersRepository.findById(postDTO.getUser_id()).orElseThrow(()->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "존재하지 않는 users id"));
         post.setUser(user);
+        // 이렇게 하면 포링키라 usersRepository를 통해서 스프링이 db의 알맞는 유저를 들고온다.
 
         return postRepository.save(post); // 이렇게 해야 id가 null이라고 에라가 안뜬다.
     }
