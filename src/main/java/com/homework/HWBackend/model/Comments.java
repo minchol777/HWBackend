@@ -42,19 +42,19 @@ public class Comments {
         this.main = main;
     }
 
-    public Post getPost_id() {
+    public Post getPostid() {
         return postid;
     }
 
-    public void setPost_id(Post post_id) {
-        this.postid = post_id;
+    public void setPostid(Post postid) {
+        this.postid = postid;
     }
 
-    public Users getUser_id() {
+    public Users getUserid() {
         return userid;
     }
 
-    public void setUser_id(Users user_id) {
-        this.userid = user_id;
+    public void setUserid(Users userid) {
+        this.userid = userid;
     }
 }

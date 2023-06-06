@@ -2,9 +2,11 @@ package com.homework.HWBackend.controller;
 
 import com.homework.HWBackend.DTO.*;
 import com.homework.HWBackend.model.Boards;
+import com.homework.HWBackend.model.Comments;
 import com.homework.HWBackend.model.Post;
 import com.homework.HWBackend.model.Users;
 import com.homework.HWBackend.repository.BoardsRepository;
+import com.homework.HWBackend.repository.CommentsRepository;
 import com.homework.HWBackend.repository.PostRepository;
 import com.homework.HWBackend.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,8 @@ public class PostController {
     @Autowired
     private UsersRepository usersRepository;
 
+    @Autowired
+    private CommentsRepository commentsRepository;
 
 
 
@@ -148,7 +152,16 @@ public class PostController {
 
     //삭제
     @DeleteMapping("/post/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public void deletePost(@PathVariable int id) {
-        postRepository.deleteById(id);
+        Post post = postRepository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "post_id에 해당하는 게시글이 없습니다."));
+
+        List<Comments> comments = commentsRepository.findByPostid(post);
+        for (Comments comment : comments) {
+            commentsRepository.delete(comment);
+        }
+
+        postRepository.delete(post);;
     }
 }
