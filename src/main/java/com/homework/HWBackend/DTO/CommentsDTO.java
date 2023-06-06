@@ -4,9 +4,9 @@ public class CommentsDTO {
 
     private String main;
 
-    private int post_id;
+    private int postid; //_스네이크 케이스 사용 금지
 
-    private int user_id;
+    private int userid;
 
 
     //g s tter
@@ -20,19 +20,19 @@ public class CommentsDTO {
         this.main = main;
     }
 
-    public int getPost_id() {
-        return post_id;
+    public int getPostid() {
+        return postid;
     }
 
-    public void setPost_id(int post_id) {
-        this.post_id = post_id;
+    public void setPostid(int postid) {
+        this.postid = postid;
     }
 
-    public int getUser_id() {
-        return user_id;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 }
