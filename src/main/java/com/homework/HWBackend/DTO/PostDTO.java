@@ -1,12 +1,23 @@
 package com.homework.HWBackend.DTO;
 
 public class PostDTO {
+    // 동일해야한다 모델필드랑
+    private Long id;
     private String title;
     private String main;
     private int boardid;
     private int userid;
 
     //g s
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;

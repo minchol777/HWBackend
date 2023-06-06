@@ -20,11 +20,11 @@ public class Post {
     //fk 들
     @ManyToOne
     @JoinColumn(name = "board_id")
-    private Boards board;
+    private Boards boardid;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users user;
+    private Users userid;
 
     //getter setter
 
@@ -53,19 +53,19 @@ public class Post {
         this.main = main;
     }
 
-    public Boards getBoard() {
-        return board;
+    public Boards getBoardid() {
+        return boardid;
     }
 
-    public void setBoard(Boards board) {
-        this.board = board;
+    public void setBoardid(Boards boardid) {
+        this.boardid = boardid;
     }
 
-    public Users getUser() {
-        return user;
+    public Users getUserid() {
+        return userid;
     }
 
-    public void setUser(Users user) {
-        this.user = user;
+    public void setUserid(Users userid) {
+        this.userid = userid;
     }
 }
